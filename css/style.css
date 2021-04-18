@@ -1,0 +1,62 @@
+body {
+    background-color:#12B0E8;
+}
+.name-box{
+background-color: beige;
+/* height: 240px; */
+width:400px;
+border: 2px solid white;
+border-radius: 25px 
+}
+.name-box2{
+    background-color: beige;
+    /* height: 240px; */
+    width:400px;
+    border: 2px solid white;
+    border-radius: 25px 
+    }
+    .name-box2 h1{
+        text-align: center;
+        margin-bottom: 5vh;
+    }
+
+.next{
+    position: relative;
+    float: right;
+}
+.name-box1{
+    background-color: beige;
+    /* height:260px; */
+    width:400px;
+    border: 2px solid white;
+    border-radius: 25px 
+    }
+
+.main-box{
+    height: 100vh;
+}
+.name-box h2{
+    margin-left: 4vh;
+    margin-top: 3vh;
+}
+ .start{
+   float: right !important;
+   margin-right: 10%;
+}
+.name-box ul li{
+    margin-left: 4vh !important;
+}
+.end{
+    float: left !important;
+    margin-left: 10%;
+    margin-bottom: 3vh;
+}
+#mcqPage{
+    display: none;
+}
+#formFirstPage{
+    display: none;
+}
+/* #instruction{
+    display: none;
+} */
