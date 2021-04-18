@@ -1,4 +1,4 @@
-let questions = [
+let questionsDB = [
     {
       numb: 1,
       question:
@@ -24,10 +24,10 @@ let questions = [
       numb: 3,
       question:
         "Consider a two dimensional array A[20][10]. Assume 4 words per memory cell, the base address of array A is 100, elements are stored in row-major order and first element is A[0][0]. What is the address of A[11][5]?",
-      option_aa: "560",
-      option_bb: "460",
-      option_cc: "570",
-      option_dd: "575",
+      option_aa: 560,
+      option_bb: 460,
+      option_cc: 570,
+      option_dd: 575,
       ans: "",
     },
     {
@@ -173,6 +173,21 @@ let questions = [
 let start = document.getElementById("start");
 let end = document.getElementById("endd");
 let start_quiz = document.getElementById("startt")
+const option1 = document.getElementById("optionSel1");
+const option2 = document.getElementById("optionSel2");
+const option3 = document.getElementById("optionSel3");
+const option4 = document.getElementById("optionSel4");
+const quest = document.getElementById('quizQues');
+const answers = document.querySelector('.ans');
+const nextBtn = document.querySelector("#next");
+const prevBtn = document.querySelector("#prev");
+const showScore= document.getElementById("showScore");
+const  reload = document.getElementById("reloadBtn");
+// const option1 = document.getElementById("selectedOption1");
+// const option2 = document.getElementById("selectedOption2");
+// const option3 = document.getElementById("selectedOption3");
+// const option4 = document.getElementById("selectedOption4");
+
 
 
 
@@ -191,7 +206,63 @@ function startQuiz(){
   document.getElementById('formFirstPage').classList.add("name-box");
   document.getElementById('instruction').classList.add("name-box");
   document.getElementById('mcqPage').classList.remove("name-box");
+
+  var questionCount =0;
+  const questList = questionsDB[questionCount];
+  quest.innerText= questList.numb + " " + questList.question;
+  option1.innerText = questList.option_a;
+  option2.innerText = questList.option_b;
+  option3.innerText = questList.option_c;
+  option4.innerText = questList.option_d;
+
 }
 start.addEventListener('click',myStart);
 end.addEventListener('click',myEnd);
 start_quiz.addEventListener('click',startQuiz);
+let questionCount=1;
+const loadQuestion =()=>{
+  const questList = questionsDB[questionCount];
+  quest.innerText= questList.numb + " " + questList.question;
+  option1.innerText = questList.option_a;
+  option2.innerText = questList.option_b;
+  option3.innerText = questList.option_c;
+  option4.innerText = questList.option_d;
+}
+const nextQues=()=>{
+
+
+    if(questionCount<questionsDB.length){
+      loadQuestion();
+      questionCount++;
+
+    }
+    else{
+      // console.log("hi");
+      showScore.classList.remove('show-score');
+    };
+  };
+  // const prevQues=()=>{
+  //   if(questionCount>0){
+  //     prevBtn.classList.remove('show-score');
+  //   }
+  //   questionCount--;
+  // }
+//   questionCount++;
+//   const getCheckedAns=()=>{
+//     let answer;
+  
+// };
+const getCheckedAns=()=>{
+  let answer;
+
+  answers.forEach((curAnsElem)=>{
+    if(curAnsElem.checked){
+      answer = curAnsElem.id;
+    }
+  });
+  return answer;
+};
+
+const deselectAll=()=>{
+  answers.forEach((curAnsElem)=> curAnsElem.checked = false);
+}

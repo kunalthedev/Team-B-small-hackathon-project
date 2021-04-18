@@ -63,7 +63,7 @@
       <!-- MCQ page -->
       <div class="name-box p-5" id="mcqPage">
         <div>
-          <h2 class="question"><span class="numb">1.</span> Question</h2>
+          <h2 class="question" id='quizQues'><span class="numb">1.</span> Question</h2>
 
           <div>
             <div class="row">
@@ -71,10 +71,10 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault1"
+                  id="selectedOption1"
+                  name="ans"
                 />
-                <label class="form-check-label" for="flexRadioDefault1">
+                <label class="form-check-label" for="selectedOption1" id="optionSel1">
                   Default radio
                 </label>
               </div>
@@ -82,10 +82,21 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault1"
+                  id="selectedOption2"
+                  name="ans"
                 />
-                <label class="form-check-label" for="flexRadioDefault1">
+                <label class="form-check-label" for="selectedOption2" id="optionSel2">
+                  Default radio
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio" 
+                  id="selectedOption3"
+                  name="ans"
+                />
+                <label class="form-check-label" for="selectedOption3" id="optionSel3">
                   Default radio
                 </label>
               </div>
@@ -93,34 +104,29 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault1"
+                  id="selectedOption4"
+                  name="ans"
                 />
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Default radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault1"
-                />
-                <label class="form-check-label" for="flexRadioDefault1">
+                <label class="form-check-label" for="selectedOption" id="optionSel4">
                   Default radio
                 </label>
               </div>
               <div class="btn w-100">
-                <button type="button" class="btn btn-primary float-right next">
+                <button type="button" onclick="nextQues();" id="next" class="btn btn-primary float-right next">
                   Next >
                 </button>
+                <!-- <button type="button" onclick="prevQues();" id="prev" class="btn btn-primary float-left ">
+                   Previous
+                </button> -->
               </div>
+            <!-- </div id="showScore" class="show-score"> <button class="btn btn-primary" id="reloadBtn" class="show-score" onclick="location.reload();">Play Again</button>
+          </div> -->
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div id="print"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
