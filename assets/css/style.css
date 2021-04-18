@@ -1,0 +1,12 @@
+body {
+    background-color:#12B0E8;
+}
+.name-box{
+background-color: beige;
+height:200px;
+width:400px;
+display:flex;
+align-items: center;
+justify-content: center;
+}
+
