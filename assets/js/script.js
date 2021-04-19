@@ -181,6 +181,8 @@ const nextBtn = document.querySelector("#next");
 const prevBtn = document.querySelector("#prev");
 const showScore = document.getElementById("showScore");
 const reload = document.getElementById("reloadBtn");
+const name = document.getElementById("full-name");
+const mail = document.getElementById("email");
 // const option1 = document.getElementById("selectedOption1");
 // const option2 = document.getElementById("selectedOption2");
 // const option3 = document.getElementById("selectedOption3");
@@ -229,6 +231,9 @@ const prevQues = () => {
   if (questionCount > 0) {
     questionCount--;
     loadQuestion();
+
+    // document.getElementById("showScore").classList.remove("show-score");
+    // showScore.classList.remove("show-score");
   } else {
     // showScore.classList.remove("show-score");
   }
@@ -238,8 +243,11 @@ const nextQues = () => {
   if (questionCount < questionsDB.length) {
     questionCount++;
     loadQuestion();
-  } else {
-    showScore.classList.remove("show-score");
+    // console.log(questionCount)
+  } else{
+    // showScore.classList.remove("show-score");
+    // prevBtn.classList.add('show-score');
+    // nextBtn.classList.add('show-score');
   }
 };
 // const prevQues=()=>{
