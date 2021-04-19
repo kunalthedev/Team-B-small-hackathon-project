@@ -202,7 +202,7 @@ function startQuiz() {
   document.getElementById("instruction").classList.add("name-box");
   document.getElementById("mcqPage").classList.remove("name-box");
 
-  var questionCount = 0;
+  // var questionCount = 0;
   const questList = questionsDB[questionCount];
   quest.innerText = questList.numb + " " + questList.question;
   option1.innerText = questList.option_a;
@@ -213,7 +213,9 @@ function startQuiz() {
 start.addEventListener("click", myStart);
 end.addEventListener("click", myEnd);
 start_quiz.addEventListener("click", startQuiz);
-let questionCount = 1;
+let questionCount = 0;
+
+
 const loadQuestion = () => {
   const questList = questionsDB[questionCount];
   quest.innerText = questList.numb + " " + questList.question;
@@ -224,18 +226,18 @@ const loadQuestion = () => {
 };
 
 const prevQues = () => {
-  if (questionCount < questionsDB.length) {
-    loadQuestion();
+  if (questionCount > 0) {
     questionCount--;
+    loadQuestion();
   } else {
-    showScore.classList.remove("show-score");
+    // showScore.classList.remove("show-score");
   }
 };
 
 const nextQues = () => {
   if (questionCount < questionsDB.length) {
-    loadQuestion();
     questionCount++;
+    loadQuestion();
   } else {
     showScore.classList.remove("show-score");
   }
